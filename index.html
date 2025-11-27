@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>English Pages – Dashboard & Flashcards</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <!-- ========= HEADER ========= -->
+    <header class="app-header">
+      <div class="brand">
+        <span class="brand-dot"></span>
+        <div class="brand-text">
+          <span class="brand-title">English Pages</span>
+          <span class="brand-subtitle">A1 • Daily practice</span>
+        </div>
+      </div>
+
+      <nav class="top-nav">
+        <button class="nav-btn active" data-section="dashboard">Dashboard</button>
+        <button class="nav-btn" data-section="flashcards">Flashcards</button>
+        <button class="nav-btn" data-section="exercises">Exercícios</button>
+      </nav>
+    </header>
+
+    <!-- ========= MAIN ========= -->
+    <main class="app-main">
+      <!-- ===== DASHBOARD VIEW ===== -->
+      <section id="dashboard" class="view active">
+        <h1 class="view-title">Progresso geral</h1>
+        <p class="view-description">
+          Acompanhe seus cards estudados, revisões e taxa geral de aprendizado.
+        </p>
+
+        <div class="grid-3">
+          <article class="stat-card">
+            <span class="stat-label">Total de cards</span>
+            <span class="stat-value" id="stat-total">0</span>
+            <span class="stat-footnote">Somando todos os temas ativos</span>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-label">Cards aprendidos</span>
+            <span class="stat-value stat-green" id="stat-learned">0</span>
+            <span class="stat-footnote">Marcados como "Aprendida"</span>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-label">Em revisão</span>
+            <span class="stat-value stat-amber" id="stat-review">0</span>
+            <span class="stat-footnote">Marcados como "Não aprendida"</span>
+          </article>
+        </div>
+
+        <div class="progress-card">
+          <div class="progress-header">
+            <div>
+              <span class="progress-title">Progresso de aprendizado</span>
+              <span class="progress-subtitle">Baseado nos seus cliques nos flashcards</span>
+            </div>
+            <span class="progress-percent" id="stat-progress-label">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" id="stat-progress-fill"></div>
+          </div>
+
+          <div class="progress-meta">
+            <div class="meta-item">
+              <span class="meta-dot meta-dot-green"></span>
+              <span class="meta-label">Aprendida</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-dot meta-dot-amber"></span>
+              <span class="meta-label">Revisar</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== FLASHCARDS VIEW ===== -->
+      <section id="flashcards" class="view">
+        <h1 class="view-title">Flashcards A1</h1>
+        <p class="view-description">
+          Toque no card para ver a tradução. Use os botões para marcar se já aprendeu.
+        </p>
+
+        <div class="flashcard-shell">
+          <div class="flashcard-header">
+            <span class="topic-badge" id="current-topic">Tema</span>
+            <span class="level-pill" id="current-level">A1</span>
+          </div>
+
+          <div class="flashcard" id="flashcard">
+            <div class="flashcard-inner">
+              <div class="flashcard-face flashcard-front">
+                <div class="flashcard-label">Frente</div>
+                <p class="flashcard-word" id="card-word">apple</p>
+                <p class="flashcard-hint">Toque para ver a tradução</p>
+              </div>
+              <div class="flashcard-face flashcard-back">
+                <div class="flashcard-label">Verso</div>
+                <p class="flashcard-word" id="card-translation">maçã</p>
+                <p class="flashcard-example" id="card-example-en">
+                  I eat an apple every morning.
+                </p>
+                <p class="flashcard-example-pt" id="card-example-pt">
+                  Eu como uma maçã toda manhã.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flashcard-meta">
+            <span id="card-index">1 / 5</span>
+            <span id="card-id">ID: 1</span>
+          </div>
+
+          <div class="flashcard-actions">
+            <button id="btn-hard" class="pill-btn pill-secondary">
+              Não aprendida
+            </button>
+            <button id="btn-easy" class="pill-btn pill-primary">
+              Aprendida
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== EXERCISES VIEW ===== -->
+      <section id="exercises" class="view">
+        <h1 class="view-title">Exercícios</h1>
+        <p class="view-description">
+          Área reservada para atividades de lacuna, tradução e testes finais.
+          Você pode adicionar novos exercícios depois, sem mexer na estrutura.
+        </p>
+
+        <div class="placeholder-card">
+          <p>
+            Em breve: exercícios conectados aos mesmos temas dos seus flashcards
+            (Comida & bebida, Casa & objetos, etc.).
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- ========= FOOTER ========= -->
+    <footer class="app-footer">
+      <span>Feito para estudo diário • English Pages</span>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
